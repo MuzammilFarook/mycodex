@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <!-- Include section schemas -->
+    <xs:include schemaLocation="../sections/TitlePage.xsd"/>
+    <xs:include schemaLocation="../sections/TableOfContents.xsd"/>
+    <xs:include schemaLocation="../sections/ExecutiveSummary.xsd"/>
+    <xs:include schemaLocation="../sections/FinancialOverview.xsd"/>
+    <xs:include schemaLocation="../sections/CustomerInsights.xsd"/>
+    <xs:include schemaLocation="../sections/ProductPerformance.xsd"/>
+    <xs:include schemaLocation="../sections/RiskAnalysis.xsd"/>
+    <xs:include schemaLocation="../sections/Appendices.xsd"/>
+
+    <!-- Root Report element -->
+    <xs:element name="Report">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TitlePage" type="TitlePageType"/>
+                <xs:element name="TableOfContents" type="TableOfContentsType"/>
+                <xs:element name="ExecutiveSummary" type="ExecutiveSummaryType"/>
+                <xs:element name="FinancialOverview" type="FinancialOverviewType"/>
+                <xs:element name="CustomerInsights" type="CustomerInsightsType"/>
+                <xs:element name="ProductPerformance" type="ProductPerformanceType"/>
+                <xs:element name="RiskAnalysis" type="RiskAnalysisType"/>
+                <xs:element name="Appendices" type="AppendicesType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

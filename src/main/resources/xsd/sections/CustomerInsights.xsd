@@ -1,0 +1,29 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:complexType name="CustomerInsightsType">
+        <xs:sequence>
+            <xs:element name="TotalCustomers" type="xs:integer"/>
+            <xs:element name="Demographics" type="DemographicsType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DemographicsType">
+        <xs:sequence>
+            <xs:element name="AgeGroup" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Range" type="xs:string"/>
+                        <xs:element name="Percentage" type="xs:decimal"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Gender">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Male" type="xs:decimal"/>
+                        <xs:element name="Female" type="xs:decimal"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

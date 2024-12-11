@@ -1,0 +1,34 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:complexType name="FinancialOverviewType">
+        <xs:sequence>
+            <xs:element name="Year" type="xs:string"/>
+            <xs:element name="Metrics" type="MetricsType"/>
+            <xs:element name="QuarterlyBreakdown" type="QuarterlyBreakdownType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MetricsType">
+        <xs:sequence>
+            <xs:element name="Revenue" type="xs:decimal"/>
+            <xs:element name="Profit" type="xs:decimal"/>
+            <xs:element name="Expenses" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="QuarterlyBreakdownType">
+        <xs:sequence>
+            <xs:element name="Quarter" maxOccurs="4">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="QuarterName" type="xs:string"/>
+                        <xs:element name="Revenue" type="xs:decimal"/>
+                        <xs:element name="Profit" type="xs:decimal"/>
+                        <xs:element name="Expenses" type="xs:decimal"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
